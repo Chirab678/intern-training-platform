@@ -1,72 +1,66 @@
+
 # StageForce Platform
 
 A modern Laravel + Vite + TailwindCSS web platform for intern training and education.
 
-## Getting Started
+## 🚀 Quick Start (for GitHub Users)
 
-### Prerequisites
-- PHP >= 8.2
-- Composer
-- Node.js & npm
-- MySQL
+### 1. Clone the repository
+```
+git clone https://github.com/Chirab678/intern-training-platform.git
+cd intern-training-platform
+```
 
-### Installation
-1. **Unzip the project folder** to your desired location.
-2. **Open a terminal in the project directory.**
-3. **Install PHP dependencies:**
-   ```
-   composer install
-   ```
-4. **Install Node.js dependencies:**
-   ```
-   npm install
-   ```
-   > **Note:** If you see errors about missing PostCSS/Tailwind plugins, install them:
-   > ```
-   > npm install tailwindcss @tailwindcss/forms autoprefixer postcss --save-dev
-   > ```
-5. **Copy and configure your environment file:**
-   - If `.env` does not exist, copy `.env.example` to `.env`:
-     ```
-     cp .env.example .env
-     ```
-   - Edit `.env` with your database credentials and other settings.
-6. **Generate application key:**
-   ```
-   php artisan key:generate
-   ```
-7. **Run database migrations:**
-   ```
-   php artisan migrate
-   ```
-8. **(Optional) Seed the database:**
-   ```
-   php artisan db:seed
-   ```
+### 2. Install dependencies
+```
+composer install
+npm install
+```
 
-## Running the Project
+### 3. Configure environment
+- Copy `.env.example` to `.env`:
+   ```
+   cp .env.example .env
+   ```
+- Edit `.env` and set your database and mail credentials.
 
-Open two terminal windows/tabs:
+### 4. Generate application key
+```
+php artisan key:generate
+```
 
-1. **Start the Laravel backend server:**
+### 5. Run migrations (and optionally seed demo data)
+```
+php artisan migrate
+php artisan db:seed # optional
+```
+
+### 6. Start the servers
+- In one terminal:
    ```
    php artisan serve
    ```
-   Or, if port 8000 is busy:
-   ```
-   php artisan serve --port=8080
-   ```
-2. **Start the Vite frontend dev server:**
+- In another terminal:
    ```
    npm run dev
    ```
 
-Visit `http://localhost:8000` (or your chosen port) in your browser.
+Visit [http://localhost:8000](http://localhost:8000) in your browser.
 
-## Troubleshooting
+---
+
+## 📝 Project Features
+- Modern Laravel 12 backend
+- Vite + TailwindCSS for fast, beautiful UI
+- Role-based access (admin, manager, intern, entrepreneur)
+- Module, quiz, and assignment management
+- User authentication and profile management
+
+## ⚠️ Notes
+- **Never commit your real `.env` file.** Only share `.env.example`.
+- The `vendor/` and `node_modules/` folders are not included in the repo. Run `composer install` and `npm install` after cloning.
+
+## 🛠 Troubleshooting
 - If you see errors about missing dependencies (e.g. `autoprefixer`, `@tailwindcss/forms`), install them with npm as shown above.
-- If `php artisan serve` keeps failing, try this command :                     `php -S 127.0.0.1:8888 -t public`, then visit : `http://localhost:8888`.
+- If `php artisan serve` fails, try: `php -S 127.0.0.1:8888 -t public` and visit [http://localhost:8888](http://localhost:8888).
 - If migrations fail, check for duplicate migration files or existing tables in your database.
-
-## License
-MIT
